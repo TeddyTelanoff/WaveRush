@@ -11,11 +11,11 @@ class SystemManager
  public:
 	~SystemManager();
 
-	void ProcessEvents(SDL_Event& p_Event, entt::registry& p_Registry);
+	void ProcessEvents(SDL_Event &p_Event, EntityManager &p_Manager);
 
-	void ProcessUpdate(float p_DeltaTime, entt::registry& p_Registry);
+	void ProcessUpdate(float p_DeltaTime, EntityManager &p_Manager);
 
-	void ProcessRender(SDL_Renderer* p_Renderer, entt::registry& p_Registry);
+	void ProcessRender(SDL_Renderer *p_Renderer, EntityManager &p_Manager);
 
-	void RegisterSystem(System* p_System);
+	void RegisterSystem(System *p_System);
 };

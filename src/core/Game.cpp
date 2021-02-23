@@ -79,7 +79,7 @@ void Game::Run()
 void Game::ProcessEvents(SDL_Event& p_Event)
 {
 	m_SceneManager.GetActiveScene().GetSystemManager()
-		.ProcessEvents(p_Event, m_SceneManager.GetActiveScene().GetEntityManager().GetRegistry());
+		.ProcessEvents(p_Event, m_SceneManager.GetActiveScene().GetEntityManager());
 	if (p_Event.type == SDL_QUIT)
 		m_Running = false;
 }
@@ -88,11 +88,11 @@ void Game::ProcessUpdate(float p_DeltaTime)
 {
 	m_SceneManager.GetActiveScene().ProcessUpdate(p_DeltaTime);
 	m_SceneManager.GetActiveScene().GetSystemManager()
-		.ProcessUpdate(p_DeltaTime, m_SceneManager.GetActiveScene().GetEntityManager().GetRegistry());
+		.ProcessUpdate(p_DeltaTime, m_SceneManager.GetActiveScene().GetEntityManager());
 }
 
 void Game::ProcessRender(SDL_Renderer* p_Renderer)
 {
 	m_SceneManager.GetActiveScene().GetSystemManager()
-		.ProcessRender(p_Renderer, m_SceneManager.GetActiveScene().GetEntityManager().GetRegistry());
+		.ProcessRender(p_Renderer, m_SceneManager.GetActiveScene().GetEntityManager());
 }
