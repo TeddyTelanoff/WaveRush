@@ -8,11 +8,16 @@
 PlayScene::PlayScene()
 {
 	// Add entities
-	auto player = GetEntityManager().CreateEntity();
-	GetEntityManager().GetRegistry().emplace_or_replace<TagComponent>(player, TagType::Player);
-	GetEntityManager().GetRegistry()
-		.emplace<RectangleShapeComponent>(player, SDL_Color{ 0, 255, 0, 255 }, glm::vec2(50, 50), SDL_Color{ 0, 0, 0,255 }, (int )5);
-	GetEntityManager().GetRegistry().emplace<PositionComponent>(player, 100.0f, 100.0f);
+	// auto player = GetEntityManager().CreateEntity();
+	// GetEntityManager().GetRegistry().emplace_or_replace<TagComponent>(player, TagType::Player);
+	// GetEntityManager().GetRegistry()
+	// 	.emplace<RectangleShapeComponent>(player, SDL_Color{ 0, 255, 0, 255 }, glm::vec2(50, 50), SDL_Color{ 0, 0, 0,255 }, (int )5);
+	// GetEntityManager().GetRegistry().emplace<PositionComponent>(player, 100.0f, 100.0f);
+
+	Entity player = GetEntityManager().CreateEntity();
+	player.AddComponent<TagComponent>(TagType::Player);
+	player.AddComponent<RectangleShapeComponent>(SDL_Color{ 0, 255, 0, 255 }, glm::vec2(50, 50), SDL_Color{ 0, 0, 0,255 }, (int)5);
+	player.AddComponent<PositionComponent>(100.0f, 100.0f);
 
 
 	// Register systems

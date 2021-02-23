@@ -2,13 +2,13 @@
 
 #include <entt/entt.hpp>
 
+#include "Entity.hpp"
+
 class EntityManager
 {
  private:
 	entt::registry m_Registry;
 
  public:
-	entt::registry& GetRegistry();
-
-	entt::entity CreateEntity();
+	Entity CreateEntity();
 };

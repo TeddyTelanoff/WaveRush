@@ -1,12 +1,9 @@
 #include "EntityManager.hpp"
 
-entt::registry& EntityManager::GetRegistry()
+Entity EntityManager::CreateEntity()
 {
-	return m_Registry;
-}
+	entt::entity f_Id = m_Registry.create();
 
-entt::entity EntityManager::CreateEntity()
-{
-	return m_Registry.create();
+	return Entity(m_Registry, f_Id);
 }
 
