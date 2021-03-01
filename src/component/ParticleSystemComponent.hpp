@@ -20,7 +20,7 @@ struct ParticleSystemComponent
     {
         if (*Destroyed)
         {
-            // printf("ParticleSystemComponent Destroyed! (Particles: %p)\n", Particles);
+            printf("ParticleSystemComponent Destroyed! (Particles: %p)\n", Particles);
             delete[] Particles;
             delete Destroyed;
         }
