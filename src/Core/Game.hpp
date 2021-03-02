@@ -27,7 +27,7 @@ class Game
  public:
 	static Game& Instance();
 
-	void Run();
+	void Run(Scene *p_Scene);
 
 	WindowSettings& GetSettings();
 

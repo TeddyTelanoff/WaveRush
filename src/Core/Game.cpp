@@ -35,11 +35,11 @@ Game& Game::Instance()
 	return s_Instance;
 }
 
-void Game::Run()
+void Game::Run(Scene *p_Scene)
 {
 	// Init
 	{
-		m_SceneManager.SetActiveScene(new PlayScene());
+		m_SceneManager.SetActiveScene(p_Scene);
 	}
 
 	SDL_Event f_Event;

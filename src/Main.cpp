@@ -1,4 +1,5 @@
 #include "Core/Game.hpp"
+#include "Scene/PlayScene.hpp"
 
 unsigned allocatedHeap = 0, totalHeap = 0;
 void *operator new(size_t sz)
@@ -32,7 +33,7 @@ int main(int argc, char* argv[])
 	(void)argv;
 
 	// Runs the game
-	Game::Instance().Run();
+	Game::Instance().Run(new PlayScene);
 
 	printf("Allocated Heap: %u, Total Heap: %u\n", allocatedHeap, totalHeap);
 	return 0;
