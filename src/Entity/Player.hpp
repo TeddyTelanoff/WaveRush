@@ -6,6 +6,7 @@ class Player : public Entity
 {
  private:
 	int32_t m_VelocityLevel;
+	bool m_Dead = false;
 
  public:
 	explicit Player(const Vec2f& p_Position = Vec2f());

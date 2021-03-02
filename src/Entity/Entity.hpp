@@ -11,6 +11,8 @@ enum class EntityType
 	Particle
 };
 
+class EntityManager;
+
 class Entity
 {
  protected:
@@ -20,6 +22,9 @@ class Entity
 	Vec2f m_Velocity;
 	uint32_t m_Layer = 0;
 
+	EntityManager *m_Manager;
+
+	friend class EntityManager;
  public:
 	explicit Entity(EntityType p_EntityType = EntityType::Entity);
 

@@ -3,6 +3,7 @@
 
 Entity *EntityManager::AddEntity(Entity* p_Entity)
 {
+	p_Entity->m_Manager = this;
 	m_Entities.emplace_back(p_Entity);
 	return p_Entity;
 }
